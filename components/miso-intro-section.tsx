@@ -106,6 +106,15 @@ export function MisoIntroSection() {
     })
   }, [api])
 
+  // Auto-slide effect for desktop tabs (every 2 seconds)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % features.length)
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   const currentFeature = features[activeFeature]
   const currentImage = currentFeature.defaultImage
 
@@ -142,18 +151,16 @@ export function MisoIntroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <Card className="overflow-hidden p-0 rounded-xl shadow-xl">
-              <div className="relative aspect-video bg-black rounded-xl">
-                <iframe
-                  ref={videoRef}
-                  src="https://www.youtube.com/embed/67MlM2dUlN8?enablejsapi=1&mute=1"
-                  title="MISO 소개 영상"
-                  className="absolute inset-0 w-full h-full rounded-xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </Card>
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/67MlM2dUlN8?enablejsapi=1&mute=1"
+                title="MISO 소개 영상"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           <div className="space-y-8">

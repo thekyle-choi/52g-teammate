@@ -48,7 +48,7 @@ export function PressSection() {
       thumbnail: "https://www.segye.com/content/image/2025/07/02/20250702517610.jpg",
     },
     {
-      title: "GS그룹, 글로벌 협 툴 '노션'과 맞손…생성형 AI 활용 속도",
+      title: "GS그룹, 글로벌 협업툴 '노션'과 맞손…생성형 AI 활용 속도",
       publisher: "SBS Biz",
       date: "2024.11.06",
       url: "https://biz.sbs.co.kr/article/20000200335",
