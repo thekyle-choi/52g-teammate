@@ -17,6 +17,8 @@ import {
   Award,
   UserCheck,
   Shield,
+  Briefcase,
+  Sparkles,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -72,36 +74,36 @@ const problemSolvingApproaches = [
 
 const activities = [
   {
-    icon: Zap,
-    title: "PLAI 해커톤",
-    summary: "짧은 시간 내에 집중도 있게 현장과 고객의 문제를 해결하는 디지털 아이디어를 제안합니다.",
+    icon: Wrench,
+    title: "MISO 플랫폼 개발",
+    summary: "GS그룹 현장에서 검증된 AI 업무혁신 플랫폼을 지속적으로 고도화하고 새로운 기능을 개발합니다.",
+    image: "/playground.png",
     details:
-      "24~48시간 동안 팀을 이뤄 실제 문제를 AI로 해결하는 프로토타입을 만듭니다. 아이디어 구상부터 구현, 발표까지 전 과정을 경험하며 우수 아이디어는 실제 사업화 지원을 받습니다.",
-    image: "/plai-hackathon.jpg",
+      "MISO 플랫폼의 핵심 기능을 개발하고 개선합니다. 현장의 피드백을 반영하여 사용자 경험을 향상시키고, 노코드/로우코드 개발 환경을 지속적으로 고도화합니다.",
   },
   {
-    icon: GraduationCap,
-    title: "AX기초교육",
-    summary: "GenAI 기초 이론부터 내 업무를 돕는 AI 에이전트 만들기까지 2일 과정으로 배워봅니다.",
+    icon: Briefcase,
+    title: "AX 프로젝트 코칭",
+    summary: "현장에서 고객의 문제를 파악하고, 맞춤형 AX 솔루션을 설계·구현합니다.",
+    image: "/problem-discovery-workshop.jpg",
     details:
-      "생성형 AI의 작동 원리부터 프롬프트 엔지니어링, 실무 활용까지 체계적으로 학습합니다. 2일차에는 AI 에이전트를 직접 만들어보며 코딩 경험 없이도 바로 업무에 적용 가능합니다.",
-    image: "/ax-basic-education.png",
+      "현장에서 복잡한 비즈니스 문제를 신속하게 파악합니다. AX 기초 교육과 디자인씽킹 방법론을 활용한 문제 발굴 워크샵을 통해 진짜 해결해야 할 문제를 함께 찾아내고, 맞춤형 AI 솔루션으로 구현합니다.",
+  },
+  {
+    icon: Sparkles,
+    title: "버티컬 AI 애플리케이션 / SLM(경량모델) 개발",
+    summary: "특정 업무 영역에 최적화된 AI 애플리케이션과 경량화된 모델을 개발하여 실무에 바로 적용합니다.",
+    image: "/software-development-coding.jpg",
+    details:
+      "현장 실무 영역에 특화된 버티컬 AI 애플리케이션을 개발합니다. 경량화된 SLM을 활용하여 빠른 응답 속도와 낮은 비용으로 실무에 바로 적용 가능한 솔루션을 만듭니다.",
   },
   {
     icon: Users,
-    title: "문제발굴 워크샵",
-    summary: "디자인씽킹 방법론으로 현장의 실제 문제를 발굴하고 AI 솔루션을 함께 설계합니다.",
-    image: "/problem-discovery-workshop.jpg",
+    title: "AX커뮤니티 운영",
+    summary: "교육, 워크샵, 해커톤 등 AX 역량 강화를 위한 다양한 프로그램을 기획하고 운영합니다.",
+    image: "/plai-hackathon.jpg",
     details:
-      "디자인씽킹 방법론을 활용하여 현장의 실제 문제를 발굴하고 정의합니다. 고객 인터뷰와 데이터 분석을 통해 진짜 해결해야 할 문제를 찾아내고, 팀 협업으로 AI 솔루션을 함께 설계합니다.",
-  },
-  {
-    icon: Plane,
-    title: "해외 트레이닝 프로그램",
-    summary: "실리콘밸리를 직접 방문하여 최신 AI 트렌드와 글로벌 혁신 사례를 체험합니다.",
-    image: "/overseas-training-program.jpg",
-    details:
-      "실리콘밸리와 글로벌 AI 허브를 직접 방문하여 최신 트렌드와 혁신 사례를 경험합니다. 현지 스타트업과의 네트워킹을 통해 글로벌 관점을 확장하고, 실제 비즈니스 현장의 AI 활용 사례를 체험합니다.",
+      "AX 기초 교육부터 문제 발굴 워크샵, 해커톤까지 다양한 프로그램을 기획하고 운영합니다. 구성원들이 AI를 활용한 업무 혁신을 직접 경험하고 학습할 수 있는 환경을 제공하며, 우수한 아이디어는 실제 사업화까지 지원합니다.",
   },
 ]
 
@@ -239,17 +241,6 @@ export function CompanyIntroSection() {
               <div className="space-y-5">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
-                    <Award className="h-5 w-5 text-foreground" />
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-semibold">그룹 AI 생태계 참여</h4>
-                    <p className="text-sm text-muted-foreground">
-                      GS그룹 전체의 AI 혁신 네트워크에 참여하여 최신 기술을 공유받습니다.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
                     <UserCheck className="h-5 w-5 text-foreground" />
                   </div>
                   <div className="space-y-1">
@@ -261,11 +252,24 @@ export function CompanyIntroSection() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-foreground" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-semibold">조직 경쟁력 강화</h4>
+                    <p className="text-sm text-muted-foreground">
+                      파견 인재의 AX 노하우와 실전 경험이 조직의 디지털 전환 경쟁력을 높입니다.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
                     <Shield className="h-5 w-5 text-foreground" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="font-semibold">저위험 혁신 실험</h4>
-                    <p className="text-sm text-muted-foreground">낮은 비용과 리스크로 AI 사업화 전문성을 확보합니다.</p>
+                    <h4 className="font-semibold">저비용·저위험 혁신</h4>
+                    <p className="text-sm text-muted-foreground">
+                      낮은 비용과 리스크로 AI 사업화 전문성을 확보합니다.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -333,7 +337,6 @@ export function CompanyIntroSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {activities.map((activity, index) => {
-                const Icon = activity.icon
                 const isFlipped = flippedCards.has(index)
                 return (
                   <div key={activity.title} className="w-full">
@@ -365,8 +368,7 @@ export function CompanyIntroSection() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
                             <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6">
-                              <div className="flex items-center gap-2 md:gap-3 text-white mb-2 md:mb-3">
-                                <Icon className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+                              <div className="text-white mb-2 md:mb-3">
                                 <h4 className="text-base md:text-xl font-semibold">{activity.title}</h4>
                               </div>
                               <p className="text-white/90 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 line-clamp-3">
@@ -388,10 +390,7 @@ export function CompanyIntroSection() {
                           }}
                         >
                           <div className="h-full flex flex-col p-4 md:p-6 overflow-y-auto">
-                            <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                              <div className="p-1.5 md:p-2 bg-primary/10 rounded-lg flex-shrink-0">
-                                <Icon className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                              </div>
+                            <div className="mb-3 md:mb-4">
                               <h4 className="text-base md:text-xl font-semibold">{activity.title}</h4>
                             </div>
                             <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-1">

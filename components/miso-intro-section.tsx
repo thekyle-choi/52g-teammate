@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Sparkles, Store, Wrench, Users } from "lucide-react"
 import Image from "next/image"
+import { useIsMobile } from "@/hooks/use-mobile"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 
 const features = [
   {
@@ -47,8 +54,11 @@ const features = [
 export function MisoIntroSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [activeFeature, setActiveFeature] = useState(0)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
   const sectionRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLIFrameElement>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,6 +95,16 @@ export function MisoIntroSection() {
 
     return () => videoObserver.disconnect()
   }, [])
+
+  useEffect(() => {
+    if (!api) return
+
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
 
   const currentFeature = features[activeFeature]
   const currentImage = currentFeature.defaultImage
@@ -147,9 +167,10 @@ export function MisoIntroSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="grid md:grid-cols-[200px_1fr] gap-6">
+              {/* Desktop: Tab-based layout */}
+              <div className="hidden md:grid md:grid-cols-[200px_1fr] gap-6">
                 {/* Vertical tabs on the left */}
-                <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible">
+                <div className="flex flex-col gap-2">
                   {features.map((feature, index) => {
                     return (
                       <button
@@ -212,6 +233,74 @@ export function MisoIntroSection() {
                     </div>
                   </div>
                 </Card>
+              </div>
+
+              {/* Mobile: Carousel layout */}
+              <div className="md:hidden">
+                <Carousel setApi={setApi} className="w-full">
+                  <CarouselContent>
+                    {features.map((feature, index) => {
+                      const Icon = feature.icon
+                      return (
+                        <CarouselItem key={index} className="h-[600px]">
+                          <Card className="h-full overflow-hidden p-6 shadow-[8px_8px_0_0_rgba(0,0,0,1)] flex flex-col">
+                            <div className="relative aspect-video mb-6 rounded-lg overflow-hidden bg-muted shrink-0">
+                              <Image
+                                src={feature.defaultImage || "/placeholder.svg"}
+                                alt={feature.title}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+
+                            <div className="flex-1 flex flex-col gap-5">
+                              <div className="flex items-center gap-3 shrink-0">
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                  <Icon className="w-6 h-6 text-primary" />
+                                </div>
+                                <div>
+                                  <h3 className="text-2xl font-bold">{feature.title}</h3>
+                                  <p className="text-sm text-muted-foreground">{feature.subtitle}</p>
+                                </div>
+                              </div>
+
+                              <p className="text-base text-muted-foreground leading-relaxed flex-1">{feature.description}</p>
+
+                              <div className="pt-4 border-t shrink-0">
+                                <div className="flex flex-wrap gap-2">
+                                  {feature.highlights.map((highlight, idx) => (
+                                    <div
+                                      key={idx}
+                                      className="px-3 py-1.5 bg-primary/10 text-primary text-sm rounded-full font-medium"
+                                    >
+                                      {highlight}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </Card>
+                        </CarouselItem>
+                      )
+                    })}
+                  </CarouselContent>
+                </Carousel>
+
+                {/* Carousel indicators */}
+                <div className="flex justify-center gap-2 mt-6">
+                  {features.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => api?.scrollTo(index)}
+                      className={`h-2 rounded-full transition-all ${
+                        current === index
+                          ? "w-8 bg-primary"
+                          : "w-2 bg-muted-foreground/30"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -78,7 +78,7 @@ export function RecruitmentSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">모집 개요</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">모집 안내</h2>
           </div>
 
           <Card

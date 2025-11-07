@@ -69,12 +69,6 @@ export function Navigation() {
             >
               모집 안내
             </button>
-            <button
-              onClick={() => scrollToSection("testimonial")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              팀원 후기
-            </button>
           </div>
 
           <div className="flex items-center gap-2">
@@ -119,12 +113,6 @@ export function Navigation() {
                 className="text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
               >
                 모집 안내
-              </button>
-              <button
-                onClick={() => scrollToSection("testimonial")}
-                className="text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-              >
-                팀원 후기
               </button>
             </div>
           </div>

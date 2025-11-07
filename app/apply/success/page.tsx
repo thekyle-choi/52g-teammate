@@ -1,14 +1,13 @@
 "use client"
 
 import { Suspense } from "react"
-import { useSearchParams, useRouter } from "next/navigation"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, ArrowRight, Home } from "lucide-react"
+import { CheckCircle2, Home } from "lucide-react"
 import Link from "next/link"
 
 function SuccessContent() {
   const searchParams = useSearchParams()
-  const router = useRouter()
   const name = searchParams.get("name") || "지원자"
   const email = searchParams.get("email") || ""
 
@@ -73,14 +72,6 @@ function SuccessContent() {
                 홈으로 돌아가기
               </Button>
             </Link>
-            <Button
-              size="lg"
-              className="flex-1 group"
-              onClick={() => router.push("/#recruitment")}
-            >
-              모집 정보 보기
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
           </div>
 
           {/* Decorative Elements */}
@@ -94,7 +85,6 @@ function SuccessContent() {
         </div>
 
         {/* Decorative circles */}
-        <div className="absolute top-20 left-10 w-20 h-20 border border-primary/20 rounded-full opacity-40 hidden md:block" />
         <div className="absolute bottom-20 right-10 w-32 h-32 border border-primary/20 rounded-full opacity-40 hidden md:block" />
       </div>
     </div>
