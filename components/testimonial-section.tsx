@@ -61,39 +61,40 @@ export function TestimonialSection() {
 
   return (
     <section ref={sectionRef} className="relative py-16 md:py-32 bg-primary/5 border-b border-border/20">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-7xl mx-auto space-y-12 md:space-y-16">
-          <div
-            className={`text-center space-y-4 md:space-y-6 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">52g Studio의 이야기</h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              현장에서 시작된 변화, 함께 만들어가는 AX의 미래
-            </p>
-          </div>
+      {/* 헤더는 컨테이너 안에 유지 */}
+      <div className="container px-4 mx-auto mb-12 md:mb-16">
+        <div
+          className={`text-center space-y-4 md:space-y-6 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">52g Studio의 이야기</h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            현장에서 시작된 변화, 함께 만들어가는 AX의 미래
+          </p>
+        </div>
+      </div>
 
-          <div className="relative overflow-hidden">
-            <div className="flex gap-4 md:gap-6 animate-scroll-left">
-              {testimonials.map((testimonial, index) => (
-                <Card key={`testimonial-${index}`} className="flex-shrink-0 w-[300px] md:w-[380px]">
-                  <CardContent className="p-6 md:p-8 flex flex-col h-full">
-                    <h3 className="text-lg md:text-xl font-bold mb-4 text-foreground">{testimonial.title}</h3>
+      {/* 카드 영역은 전체 너비로 확장하여 오버플로우 */}
+      <div className="relative overflow-x-hidden">
+        <div className="flex gap-4 md:gap-6 animate-scroll-left pl-4 md:pl-6">
+          {/* 카드들을 3번 반복하여 무한 스크롤 효과 */}
+          {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
+            <Card key={`testimonial-${index}`} className="flex-shrink-0 w-[300px] md:w-[380px]">
+              <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                <h3 className="text-lg md:text-xl font-bold mb-4 text-foreground">{testimonial.title}</h3>
 
-                    <p className="text-sm md:text-base text-foreground mb-6 flex-grow leading-relaxed">
-                      {testimonial.content}
-                    </p>
+                <p className="text-sm md:text-base text-foreground mb-6 flex-grow leading-relaxed">
+                  {testimonial.content}
+                </p>
 
-                    <div className="pt-4 border-t border-border/50 space-y-1">
-                      <p className="font-semibold text-base md:text-lg">{testimonial.name}</p>
-                      <p className="text-sm md:text-base text-foreground">{testimonial.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+                <div className="pt-4 border-t border-border/50 space-y-1">
+                  <p className="font-semibold text-base md:text-lg">{testimonial.name}</p>
+                  <p className="text-sm md:text-base text-foreground">{testimonial.role}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
