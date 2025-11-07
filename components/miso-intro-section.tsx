@@ -12,7 +12,7 @@ const features = [
     title: "플레이그라운드",
     subtitle: "노코드 AI 앱 빌더",
     description: "코딩 지식 없이도 드래그 앤 드롭으로 AI 앱을 만들고 현장에 바로 적용할 수 있습니다.",
-    defaultImage: "/플레이그라운드.png",
+    defaultImage: "/playground.png",
     highlights: ["노코드/로우코드 개발", "직관적인 워크플로우 구성", "빠른 프로토타이핑"],
   },
   {
@@ -21,7 +21,7 @@ const features = [
     title: "플레이메이커",
     subtitle: "AI 프로젝트 전문 지원팀",
     description: "기획부터 개발, 배포까지 AI 앱 개발의 전 과정을 함께하며 성공적인 AI 도입을 돕습니다.",
-    defaultImage: "/플레이메이커.png",
+    defaultImage: "/playmaker.png",
     highlights: ["전문가 기술 자문", "프로젝트 전 과정 지원", "현장 맞춤 솔루션"],
   },
   {
@@ -30,7 +30,7 @@ const features = [
     title: "쇼케이스",
     subtitle: "동료가 만든 AI 앱 마켓",
     description: "현장에서 검증된 AI 앱을 한눈에 둘러보고 바로 사용하거나 내 업무에 맞게 커스터마이징할 수 있습니다.",
-    defaultImage: "/쇼케이스.png",
+    defaultImage: "/showcase.png",
     highlights: ["검증된 AI 앱 템플릿", "원클릭 복사 & 커스터마이징", "동료의 아이디어 공유"],
   },
   {
@@ -39,7 +39,7 @@ const features = [
     title: "미소AI",
     subtitle: "우리 회사를 아는 AI 에이전트",
     description: "사내 문서와 업무 프로세스를 학습한 AI가 질의응답부터 업무 자동화까지 지원합니다.",
-    defaultImage: "/미소AI.png",
+    defaultImage: "/miso-ai.png",
     highlights: ["사내 지식 기반 학습", "실시간 질의응답", "업무 효율 향상"],
   },
 ]
