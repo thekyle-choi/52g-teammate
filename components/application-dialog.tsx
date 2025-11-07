@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   Dialog,
   DialogContent,
@@ -175,8 +175,24 @@ export function ApplicationDialog({ children }: { children: React.ReactNode }) {
       })
       return
     }
+    // 현재 포커스된 요소에서 포커스 제거
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur()
+    }
     setCurrentStep(2)
   }
+
+  // 단계 변경 시 포커스 제거
+  useEffect(() => {
+    if (currentStep === 2) {
+      // 약간의 지연을 두어 DOM 업데이트 후 포커스 제거
+      setTimeout(() => {
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur()
+        }
+      }, 100)
+    }
+  }, [currentStep])
 
   const handleBack = () => {
     setCurrentStep(1)
@@ -354,7 +370,6 @@ export function ApplicationDialog({ children }: { children: React.ReactNode }) {
                     </p>
                     <div className="space-y-2 text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-primary/30">
                       <p>• 그 과정에서 어떤 어려움이 있었고, 어떻게 극복했나요?</p>
-                      <p>• 구체적인 상황과 본인의 역할, 그리고 결과를 중심으로 작성해주세요.</p>
                     </div>
                   </div>
                 </div>
@@ -384,7 +399,6 @@ export function ApplicationDialog({ children }: { children: React.ReactNode }) {
                     <p className="text-lg font-semibold leading-relaxed">10년 뒤, 어떤 모습으로 성장하고 싶나요?</p>
                     <div className="space-y-2 text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-primary/30">
                       <p>• 장기적으로 이루고 싶은 목표나 비전을 그려보세요.</p>
-                      <p>• 그리고 그 여정에서 AX Studio의 경험이 어떤 의미와 도움이 될지 이야기해 주세요.</p>
                       <p className="italic">예: 새로운 비즈니스 리더로의 성장, AI 기반 서비스 기획자로의 확장 등</p>
                     </div>
                   </div>
