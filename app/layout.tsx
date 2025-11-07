@@ -8,6 +8,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://52g-teammate.vercel.app"),
   title: "52g Studio 팀원 모집 | 52g",
   description:
     "GS그룹의 AX 전환을 선도할 52g Studio에 합류하여 현장을 움직이는 진정한 AX를 만들어갈 열정적인 플레이어를 찾습니다.",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "52g Studio 팀원 모집",
+        type: "image/png",
       },
     ],
     locale: "ko_KR",
@@ -35,6 +37,9 @@ export const metadata: Metadata = {
     description:
       "GS그룹의 AX 전환을 선도할 52g Studio에 합류하여 현장을 움직이는 진정한 AX를 만들어갈 열정적인 플레이어를 찾습니다.",
     images: ["https://52g-teammate.vercel.app/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://52g-teammate.vercel.app",
   },
 }
 
