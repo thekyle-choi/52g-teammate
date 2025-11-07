@@ -5,15 +5,15 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const testimonials = [
   {
-    name: "Ryan 한만호",
+    name: "한만호 Ryan",
     role: "Developer",
     nickname: "라이언",
     content:
-      "다양한 도메인의 회사들과 협업하며 새로운 AI 기술을 접하고, 이를 업무에 바로 적용할 수 있었던 경험은 큰 즐거움이자 성장의 원동력이 되었습니다. 새로운 도전 속에서 얻은 배움과 성취가 앞으로의 가능성을 더욱 넓혀줍니다.",
+      "다양한 도메인의 회사들과 협업하며 새로운 AI 기술을 접하고, 이를 업무에 바로 적용할 수 있었던 경험은 큰 즐거움이자 성장의 원동력이 되었습니다. ",
     title: "다양한 도메인을 경험하며 성장하다",
   },
   {
-    name: "Young 주영재",
+    name: "주영재 Young",
     role: "GTM Manager",
     nickname: "",
     content:
@@ -25,8 +25,8 @@ const testimonials = [
     role: "UX Designer",
     nickname: "",
     content:
-      "AI 기반 CX 플랫폼으로 고객 행동·유형·VoC 데이터를 통합 분석하여 서비스 품질 향상과 현장 운영 개선 인사이트를 도출하고, 지속적인 고객 경험을 개선하는데 활용하고 있어요.",
-    title: "AI로 입체적인 고객 경험 분석",
+      "이제 조직과 개인은 AI를 도구로 사용하는 수준을 넘어, AI와 함께 사고하고 협업하며 문제를 해결하는 새로운 패러다임으로 전환하고 있습니다. 52g는 다양한 산업 현장에서 AX를 설계하고, 그 가치를 실현해갑니다.",
+    title: "AX, 일하는 방식을 새롭게 디자인하다",
   },
   {
     name: "박은아 BOM",
@@ -78,8 +78,8 @@ export function TestimonialSection() {
       {/* 카드 영역은 전체 너비로 확장하여 오버플로우 */}
       <div className="relative overflow-x-hidden">
         <div className="flex gap-4 md:gap-6 animate-scroll-left pl-4 md:pl-6">
-          {/* 카드들을 3번 반복하여 무한 스크롤 효과 */}
-          {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
+          {/* 카드들을 2번 반복하여 무한 스크롤 효과 */}
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
             <Card key={`testimonial-${index}`} className="flex-shrink-0 w-[300px] md:w-[380px]">
               <CardContent className="p-6 md:p-8 flex flex-col h-full">
                 <h3 className="text-lg md:text-xl font-bold mb-4 text-foreground">{testimonial.title}</h3>
