@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
-import { Sparkles, Store, Wrench, Users } from "lucide-react"
+import { Sparkles, Store, Wrench, Users, Building2, GraduationCap, Cpu, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 import { useIsMobile } from "@/hooks/use-mobile"
 import {
@@ -225,21 +225,23 @@ export function MisoIntroSection() {
               <div className="px-4 mx-auto max-w-7xl">
                 <div className="text-center mb-10 md:mb-14">
                   <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground">
-                    우리가 만든 변화, 현장과 함께 만들어가는 AX
+                    우리가 만든 변화, 현장과 함께 만드는 AX
                   </h3>
                 </div>
                 <div className="space-y-4 max-w-5xl mx-auto">
                   {/* 첫 번째 줄 */}
                   <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6">
                     <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <Building2 className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-primary mb-1" />
                       <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                        <CountUpNumber end={11} suffix="개" />
+                        <CountUpNumber end={11} suffix="개사" />
                       </div>
                       <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                        GS그룹 순차 도입중
+                        GS그룹 순차 도입
                       </div>
                     </div>
                     <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <GraduationCap className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-primary mb-1" />
                       <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
                         <CountUpNumber end={4800} suffix="명+" />
                       </div>
@@ -251,17 +253,21 @@ export function MisoIntroSection() {
                   {/* 두 번째 줄 */}
                   <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6">
                     <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <Users className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-primary mb-1" />
                       <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
                         <CountUpNumber end={4800} suffix="개+" />
                       </div>
-                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                        현업이 직접 만든 AI앱
-                      </div>
-                      <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground text-center break-keep">
-                        * 교육 목적 제외
+                      <div className="space-y-0">
+                        <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                          현업이 직접 만든 앱
+                        </div>
+                        <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground text-center break-keep">
+                          * 교육 목적 제외
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <CheckCircle2 className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-primary mb-1" />
                       <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
                         <CountUpNumber end={130} suffix="개+" />
                       </div>
@@ -270,17 +276,18 @@ export function MisoIntroSection() {
                       </div>
                     </div>
                     <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <Cpu className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-primary mb-1" />
                       <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
                         <CountUpNumber end={20} suffix="개+" />
                       </div>
                       <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                        현장 시스템 연동앱
+                        내부 시스템 연동앱
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="text-center mt-10 md:mt-12">
-                  <p className="text-xs md:text-sm text-primary-foreground/60 font-medium">* 2025년 10월 기준</p>
+                  <div className="text-right mt-2 md:mt-3">
+                    <p className="text-[10px] md:text-xs text-primary-foreground/60">* 2025년 10월 기준</p>
+                  </div>
                 </div>
               </div>
             </div>
