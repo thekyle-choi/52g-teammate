@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navigation />
         <DeadlineBanner />
-        <div className="pt-[112px] md:pt-[120px]">
+        <div className="pt-[100px] md:pt-[104px]">
           {children}
         </div>
         <Analytics />
