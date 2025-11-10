@@ -2,7 +2,6 @@ import { HeroSection } from "@/components/hero-section"
 import { CompanyIntroSection } from "@/components/company-intro-section"
 import { VisionSection } from "@/components/vision-section"
 import { MisoIntroSection } from "@/components/miso-intro-section"
-import { ImpactSection } from "@/components/impact-section"
 import { BenefitSection } from "@/components/benefit-section"
 import { RecruitmentSection } from "@/components/recruitment-section"
 import { JourneySection } from "@/components/journey-section"
@@ -24,7 +23,6 @@ export default function Home() {
       <div id="miso">
         <MisoIntroSection />
       </div>
-      <ImpactSection />
       <div id="benefit">
         <BenefitSection />
       </div>

@@ -12,6 +12,59 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 
+function CountUpNumber({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+  const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.5 },
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    let startTime: number | null = null
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4)
+      setCount(Math.floor(easeOutQuart * end))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      } else {
+        setCount(end)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [isVisible, end, duration])
+
+  return (
+    <div ref={ref}>
+      {count.toLocaleString()}
+      {suffix}
+    </div>
+  )
+}
+
 const features = [
   {
     id: "playground",
@@ -121,7 +174,7 @@ export function MisoIntroSection() {
   return (
     <section ref={sectionRef} className="relative py-32 bg-background border-b border-border/20">
       <div className="container px-4 mx-auto">
-        <div className="max-w-6xl mx-auto space-y-20">
+        <div className="max-w-6xl mx-auto space-y-24 md:space-y-32">
           <div
             className={`text-center space-y-6 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -160,6 +213,67 @@ export function MisoIntroSection() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+            </div>
+          </div>
+
+          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+            <div
+              className={`bg-primary py-16 md:py-24 border-y-[4px] border-black transition-all duration-700 delay-150 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <div className="px-4 mx-auto max-w-7xl">
+                <div className="text-center mb-10 md:mb-14">
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground">
+                    우리가 만든 변화, 현장과 함께 만들어가는 AX
+                  </h3>
+                </div>
+                <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6 max-w-5xl mx-auto">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                      <CountUpNumber end={11} suffix="개" />
+                    </div>
+                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                      GS그룹 순차 도입중
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                      <CountUpNumber end={4800} suffix="명+" />
+                    </div>
+                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                      미소 교육 이수자
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                      <CountUpNumber end={4800} suffix="개+" />
+                    </div>
+                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                      현업이 직접 만든 AI앱
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                      <CountUpNumber end={130} suffix="개+" />
+                    </div>
+                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                      현장에 적용된 활성앱
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                      <CountUpNumber end={20} suffix="개+" />
+                    </div>
+                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                      현장 시스템 연동앱
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center mt-10 md:mt-12">
+                  <p className="text-xs md:text-sm text-primary-foreground/60 font-medium">* 2025년 10월 기준</p>
+                </div>
+              </div>
             </div>
           </div>
 

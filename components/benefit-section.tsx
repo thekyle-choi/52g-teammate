@@ -80,12 +80,12 @@ export function BenefitSection() {
         <div className="max-w-6xl mx-auto space-y-20">
           {/* Studio 경험 */}
           <div
-            className={`text-center space-y-4 transition-all duration-700 ${
+            className={`text-center space-y-3 md:space-y-4 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">52g Studio에서만 경험할 수 있는 것들</h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <h3 className="text-3xl md:text-4xl font-bold tracking-tight">52g Studio에서만 경험할 수 있는 것</h3>
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               단순한 업무가 아닌, 조직의 변화를 이끄는 프로젝트 오너로 성장합니다.
               <br />
               AI와 혁신의 최전선에서 실전 경험을 쌓고, 의미 있는 임팩트를 만들어갑니다.
@@ -104,30 +104,30 @@ export function BenefitSection() {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="p-2.5 md:p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-lg font-semibold">{benefit.title}</h3>
+                    <h3 className="text-base md:text-lg font-semibold">{benefit.title}</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
                 </Card>
               )
             })}
           </div>
 
           <div
-            className={`mt-12 p-8 bg-primary/5 rounded-lg border border-primary/10 transition-all duration-700 ${
+            className={`mt-12 p-6 md:p-8 bg-primary/5 rounded-lg border border-primary/10 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "600ms" }}
           >
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold">52g Studio는 이런 분들에게 특히 추천합니다</h3>
-              <div className="space-y-3 text-muted-foreground">
+              <h3 className="text-lg md:text-xl font-semibold">52g Studio는 이런 분들에게 특히 추천합니다</h3>
+              <div className="space-y-3">
                 {recommendations.map((recommendation) => (
                   <div key={recommendation} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <p>{recommendation}</p>
+                    <span className="text-primary mt-1 text-sm md:text-base">✓</span>
+                    <p className="text-sm md:text-base text-muted-foreground">{recommendation}</p>
                   </div>
                 ))}
               </div>
