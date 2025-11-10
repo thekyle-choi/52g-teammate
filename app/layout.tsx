@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Navigation } from "@/components/navigation"
+import { DeadlineBanner } from "@/components/deadline-banner"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -52,7 +53,10 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navigation />
-        {children}
+        <DeadlineBanner />
+        <div className="pt-[112px] md:pt-[120px]">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

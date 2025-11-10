@@ -13,7 +13,7 @@ import { VideoIntroSection } from "@/components/video-intro-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen">
       <HeroSection />
       <div id="company-intro">
         <CompanyIntroSection />
