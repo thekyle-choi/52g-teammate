@@ -228,49 +228,58 @@ export function MisoIntroSection() {
                     우리가 만든 변화, 현장과 함께 만들어가는 AX
                   </h3>
                 </div>
-                <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6 max-w-5xl mx-auto">
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                      <CountUpNumber end={11} suffix="개" />
+                <div className="space-y-4 max-w-5xl mx-auto">
+                  {/* 첫 번째 줄 */}
+                  <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6">
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                        <CountUpNumber end={11} suffix="개" />
+                      </div>
+                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                        GS그룹 순차 도입중
+                      </div>
                     </div>
-                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                      GS그룹 순차 도입중
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                      <CountUpNumber end={4800} suffix="명+" />
-                    </div>
-                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                      미소 교육 이수자
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                      <CountUpNumber end={4800} suffix="개+" />
-                    </div>
-                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                      현업이 직접 만든 AI앱
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                        <CountUpNumber end={4800} suffix="명+" />
+                      </div>
+                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                        미소 교육 이수자
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                      <CountUpNumber end={130} suffix="개+" />
+                  {/* 두 번째 줄 */}
+                  <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-6">
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                        <CountUpNumber end={4800} suffix="개+" />
+                      </div>
+                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                        현업이 직접 만든 AI앱
+                      </div>
+                      <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground text-center break-keep">
+                        * 교육 목적 제외
+                      </div>
                     </div>
-                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                      현장에 적용된 활성앱
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                        <CountUpNumber end={130} suffix="개+" />
+                      </div>
+                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                        현장에 적용된 활성앱
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-3 md:p-4 lg:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)]">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
-                      <CountUpNumber end={20} suffix="개+" />
-                    </div>
-                    <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
-                      현장 시스템 연동앱
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-background border-[3px] border-black rounded-lg p-4 md:p-5 lg:p-7 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 w-[calc(33.333%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(33.333%-1rem)] min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                        <CountUpNumber end={20} suffix="개+" />
+                      </div>
+                      <div className="text-[10px] md:text-xs lg:text-sm text-foreground font-semibold text-center break-keep">
+                        현장 시스템 연동앱
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="text-center mt-10 md:mt-12">
+                <div className="text-right mt-10 md:mt-12">
                   <p className="text-xs md:text-sm text-primary-foreground/60 font-medium">* 2025년 10월 기준</p>
                 </div>
               </div>
