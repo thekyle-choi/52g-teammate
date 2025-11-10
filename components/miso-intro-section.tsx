@@ -279,7 +279,7 @@ export function MisoIntroSection() {
                     </div>
                   </div>
                 </div>
-                <div className="text-right mt-10 md:mt-12">
+                <div className="text-center mt-10 md:mt-12">
                   <p className="text-xs md:text-sm text-primary-foreground/60 font-medium">* 2025년 10월 기준</p>
                 </div>
               </div>
